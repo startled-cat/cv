@@ -24,19 +24,22 @@ export interface DrawerSettings {
   backdrop: boolean;
 }
 
+export interface Skill {
+  name: string;
+  level: string;
+}
+
 @Component({
   selector: 'main-content',
   templateUrl: 'main-content.html',
   styleUrls: ['main-content.css']
 })
 export class MainContent {
-
-  hideExpansionToggles:boolean = false;
+  hideExpansionToggles: boolean = true;
   drawerSettings: DrawerSettings = {
     mode: 'over',
     backdrop: true
   };
-
   showFiller = false;
 
   achievements: Achievement[] = [
@@ -126,6 +129,13 @@ export class MainContent {
       desc: 'Technik informatyk',
       icon: 'desktop_windows',
       tags: []
+    }
+  ];
+
+  languages: Skill[] = [
+    {
+      name: 'Angielski',
+      level: 'C1'
     }
   ];
 }

@@ -187,6 +187,31 @@
 
       </mat-card-content>
     </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Języki</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <ng-container *ngFor="let lang of languages">
+          <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon class="me-2">translate</mat-icon>{{lang.name}}
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            {{lang.level}}
+          </mat-expansion-panel>
+
+
+
+        </ng-container>
+
+      </mat-card-content>
+    </mat-card>
 
   </div>
 </mat-drawer-container>

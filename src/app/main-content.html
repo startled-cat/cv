@@ -33,7 +33,7 @@
 
 
 
-    <mat-card class="example-card">
+    <mat-card class="example-card mb-3">
 
       <div class="row ">
         <div class="col-12 col-sm-4 col-md-6 ">
@@ -77,159 +77,178 @@
 
     </mat-card>
 
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Wykształcenie</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+    <div class="row row-eq-height w-100">
+      <div class="col-6 mb-3">
+
+        <mat-card class="example-card h-100">
+          <mat-card-header>
+            <mat-card-title>Wykształcenie</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
 
 
 
-        <mat-expansion-panel *ngFor="let school of schools" [hideToggle]="hideExpansionToggles">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
-              {{school.name}}
-            </mat-panel-title>
-            <mat-panel-description>
-
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <b>
-            ({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd :
-            'teraz' }}) 
-          </b>
-          <div>{{school.desc}}</div>
-          <div>{{school.more}}</div>
-        </mat-expansion-panel>
-
-
-
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Doświadczenie</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <ng-container *ngFor="let job of jobs">
-
-          <mat-expansion-panel [hideToggle]="hideExpansionToggles">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <mat-icon class="me-2">work</mat-icon>{{job.name}}
-              </mat-panel-title>
-              <mat-panel-description>
-
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-
-            <b>
-              ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
-              
-            </b>
-            <div>{{job.desc}}</div>
-
-            <div mat-line *ngIf="job.more">{{job.more}}</div>
-            <div mat-line *ngFor="let item of job.list">- {{item}}</div>
-
-            <div class="tag-list">
-              <mat-chip-list class="example-chip">
-                <mat-chip class="example-box" *ngFor="let tag of job.tags">
-                  {{tag}}
-                </mat-chip>
-              </mat-chip-list>
-            </div>
-
-          </mat-expansion-panel>
-
-
-
-        </ng-container>
-
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Osiągnięcia</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-
-        <ng-container *ngFor="let achv of achievements">
-          <mat-expansion-panel [hideToggle]="hideExpansionToggles">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <mat-icon class="me-2">article</mat-icon>{{achv.name}}
-              </mat-panel-title>
-              <mat-panel-description>
-
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <b>({{achv.year}})</b>
-            {{achv.desc}}
-            <div class="tag-list">
-              <mat-chip-list class="example-chip">
-                <mat-chip class="example-box" *ngFor="let tag of achv.tags">
-                  {{tag}}
-                </mat-chip>
-              </mat-chip-list>
-            </div>
-
-
-
-          </mat-expansion-panel>
-
-
-
-        </ng-container>
-
-      </mat-card-content>
-    </mat-card>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Umiejętnośći</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="row w-100">
-
-
-          <ng-container *ngFor="let skill of skills">
-            <mat-expansion-panel expanded [hideToggle]="hideExpansionToggles" class="col-3">
+            <mat-expansion-panel *ngFor="let school of schools" [hideToggle]="hideExpansionToggles">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  <mat-icon *ngIf="skill.icon" class="me-2">{{skill.icon || 'translate'}}</mat-icon>
-                  <div *ngIf="skill.img" class="image-as-icon me-2">
-                    <img src="{{skill.img}}" class="w-100">
-                  </div>
-
-                  {{skill.name}}
-
+                  <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
+                  {{school.name}}
                 </mat-panel-title>
                 <mat-panel-description>
 
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              <mat-progress-bar *ngIf="skill.level" mode="determinate" value="{{skill.level * 100}}"></mat-progress-bar>
-
-
-
-
+              <b>
+            ({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd :
+            'teraz' }}) 
+          </b>
+              <div>{{school.desc}}</div>
+              <div>{{school.more}}</div>
             </mat-expansion-panel>
 
 
 
-          </ng-container>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-6 mb-3">
+
+        <mat-card class="example-card h-100 ">
+          <mat-card-header>
+            <mat-card-title>Doświadczenie</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ng-container *ngFor="let job of jobs">
+
+              <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <mat-icon class="me-2">work</mat-icon>{{job.name}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <b>
+              ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
+              
+            </b>
+                <div>{{job.desc}}</div>
+
+                <div mat-line *ngIf="job.more">{{job.more}}</div>
+                <div mat-line *ngFor="let item of job.list">- {{item}}</div>
+
+                <div class="tag-list">
+                  <mat-chip-list class="example-chip">
+                    <mat-chip class="example-box" *ngFor="let tag of job.tags">
+                      {{tag}}
+                    </mat-chip>
+                  </mat-chip-list>
+                </div>
+
+              </mat-expansion-panel>
 
 
 
-        </div>
+            </ng-container>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row w-100">
+
+      <div class="col-12 mb-3">
+        <mat-card class="example-card mb-0">
+          <mat-card-header>
+            <mat-card-title>Osiągnięcia</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <ng-container *ngFor="let achv of achievements">
+              <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <mat-icon class="me-2">article</mat-icon>{{achv.name}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <b>({{achv.year}})</b>
+                {{achv.desc}}
+                <div class="tag-list">
+                  <mat-chip-list class="example-chip">
+                    <mat-chip class="example-box" *ngFor="let tag of achv.tags">
+                      {{tag}}
+                    </mat-chip>
+                  </mat-chip-list>
+                </div>
 
 
 
-      </mat-card-content>
-    </mat-card>
+              </mat-expansion-panel>
+
+
+
+            </ng-container>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 mb-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Umiejętnośći</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row  g-0 w-100">
+
+
+              <div *ngFor="let skill of skills" class="col-3">
+                <mat-expansion-panel expanded [hideToggle]="hideExpansionToggles" class="skill-panel">
+                  <mat-expansion-panel-header class="">
+                    <mat-panel-title>
+                      <mat-icon *ngIf="skill.icon" class="me-2">{{skill.icon || 'translate'}}</mat-icon>
+                      <div *ngIf="skill.img" class="image-as-icon me-2">
+                        <img src="{{skill.img}}" class="w-100">
+                      </div>
+
+                      {{skill.name}}
+
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+
+                  <mat-progress-bar *ngIf="skill.level" mode="determinate" value="{{skill.level * 100}}">
+
+                  </mat-progress-bar>
+
+
+
+
+                </mat-expansion-panel>
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+
+
+
+
+
 
   </div>
 </mat-drawer-container>

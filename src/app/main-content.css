@@ -36,7 +36,7 @@ mat-drawer-content {
 
 .cards-container {
   padding: 1rem;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -91,3 +91,10 @@ a {
 mat-card {
   border-bottom: 5px solid #ffd740;
 }
+
+.skill-panel > .mat-expansion-panel-header {
+  padding: 0 1.5rem 0.5rem 1.5rem;
+}
+/* .skill-panel > .mat-expansion-panel-content > .mat-expansion-panel-body {
+  padding: 0 !important;
+} */

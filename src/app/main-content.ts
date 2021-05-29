@@ -192,8 +192,8 @@ export class MainContent {
     {
       name: 'Flask',
       img:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png',
-      level: 0.6
+        'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fflask-training-courses.uk%2Fimages%2Fflask-logo.png&f=1&nofb=1',
+      level: 0.5
     },
 
     {

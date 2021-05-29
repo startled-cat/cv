@@ -1,0 +1,183 @@
+<mat-drawer-container class="example-container" autosize [hasBackdrop]="drawerSettings.backdrop">
+  <mat-drawer #drawer [mode]="drawerSettings.mode" class="example-sidenav">
+
+
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+
+
+  </mat-drawer>
+
+
+
+
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button  class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+    <!-- <span>My App</span> -->
+    <span class="example-spacer"></span>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>share</mat-icon>
+ </button> -->
+  </mat-toolbar>
+
+  <div class="cards-container">
+
+
+
+    <mat-card class="example-card">
+
+      <div class="row">
+        <div class="col">
+          <div mat-card-avatar class="avatar"></div>
+        </div>
+        <div class="col">
+          <h3>Adam Kowalczyk</h3>
+
+          <mat-chip-list aria-label="info">
+            <mat-chip color="accent" selected>
+              <mat-icon>event</mat-icon> 1997-01-20
+            </mat-chip>
+            <mat-chip color="accent" selected>
+              <mat-icon>phone</mat-icon> 797-087-120
+            </mat-chip>
+            <mat-chip color="accent" selected>
+              <mat-icon>email</mat-icon> adam4kowalczyk@gmail.com
+            </mat-chip>
+            <mat-chip color="accent" selected>
+              <mat-icon>email</mat-icon> github.com/startled-cat
+            </mat-chip>
+          </mat-chip-list>
+
+        </div>
+      </div>
+
+
+
+
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Wykształcenie</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+
+
+        <mat-expansion-panel *ngFor="let school of schools" [hideToggle]="hideExpansionToggles">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
+              {{school.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <b>
+            ({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd :
+            'teraz' }}) 
+          </b>
+          <div>{{school.desc}}</div>
+          <div>{{school.more}}</div>
+        </mat-expansion-panel>
+
+
+
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Doświadczenie</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-container *ngFor="let job of jobs">
+
+          <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon>work</mat-icon>{{job.name}}
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <b>
+              ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
+              
+            </b>
+            <div>{{job.desc}}</div>
+
+            <div mat-line *ngIf="job.more">{{job.more}}</div>
+            <div mat-line *ngFor="let item of job.list">- {{item}}</div>
+
+            <div class="tag-list">
+              <mat-chip-list class="example-chip">
+                <mat-chip class="example-box" *ngFor="let tag of job.tags">
+                  {{tag}}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+
+          </mat-expansion-panel>
+
+
+
+        </ng-container>
+
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Osiągnięcia</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <ng-container *ngFor="let achv of achievements">
+          <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon>article</mat-icon>{{achv.name}}
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <b>({{achv.year}})</b>
+            {{achv.desc}}
+            <div class="tag-list">
+              <mat-chip-list class="example-chip">
+                <mat-chip class="example-box" *ngFor="let tag of achv.tags">
+                  {{tag}}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+
+
+
+          </mat-expansion-panel>
+
+
+
+        </ng-container>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>
+<!-- Copyright 2021 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

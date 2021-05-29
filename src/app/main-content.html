@@ -36,11 +36,17 @@
     <mat-card class="example-card">
 
       <div class="row">
-        <div class="col">
-          <div mat-card-avatar class="avatar"></div>
+        <div class="col-12 col-sm-4 col-md-6">
+
+          <div class="square mat-elevation-z4">
+            <div></div>
+          </div>
+
+
+
         </div>
-        <div class="col">
-          <h3>Adam Kowalczyk</h3>
+        <div class="col-12 col-sm-8 col-md-6">
+          <span class="display-4">Adam Kowalczyk</span>
 
           <mat-chip-list aria-label="info">
             <mat-chip color="accent" class="chip-nonclickable" selected>
@@ -58,7 +64,7 @@
             </a>
             <a href="http://github.com/startled-cat">
               <mat-chip color="accent" class="chip-clickable" selected>
-                <mat-icon class="me-1">email</mat-icon> github.com/startled-cat
+                <div class="github-icon me-1"></div> github.com/startled-cat
               </mat-chip>
             </a>
           </mat-chip-list>

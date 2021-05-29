@@ -83,3 +83,11 @@ a {
 .github-icon-light {
   background-image: url('https://i.ibb.co/pbr8b64/Git-Hub-Mark-Light-32px.png');
 }
+.image-as-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+mat-card {
+  border-bottom: 5px solid #ffd740;
+}

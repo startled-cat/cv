@@ -10,6 +10,24 @@ body {
   padding: 0;
 }
 
+.mat-primary {
+  background-color: #673ab7;
+  color: #fff;
+}
+.mat-accent {
+  background-color: #ffd740;
+  color: #000;
+}
+.gradient1 {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
 /**  Copyright 2021 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license */

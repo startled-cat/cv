@@ -53,5 +53,14 @@ mat-drawer-content {
 }
 .mat-expansion-panel {
   box-shadow: none;
-  
+}
+a {
+  text-decoration: none;
+}
+
+.chip-clickable {
+  cursor: pointer;
+}
+.chip-nonclickable:hover::after {
+  opacity: 0 !important;
 }

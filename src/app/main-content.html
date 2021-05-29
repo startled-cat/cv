@@ -43,21 +43,22 @@
           <h3>Adam Kowalczyk</h3>
 
           <mat-chip-list aria-label="info">
-            <mat-chip color="accent" selected>
-              <mat-icon>event</mat-icon> 1997-01-20
+            <mat-chip color="accent" class="chip-nonclickable" selected>
+              <mat-icon class="me-1">event</mat-icon> 1997-01-20
             </mat-chip>
-            <mat-chip color="accent" selected>
-              <mat-icon>phone</mat-icon> 797-087-120
-            </mat-chip>
-
+            <a href="tel:797087120">
+              <mat-chip color="accent" class="chip-clickable" selected>
+                <mat-icon class="me-1">phone</mat-icon> 797-087-120
+              </mat-chip>
+            </a>
             <a href="mailto: adam4kowalczyk@gmail.com">
-              <mat-chip color="accent" selected>
-                <mat-icon>email</mat-icon> adam4kowalczyk@gmail.com
+              <mat-chip color="accent" class="chip-clickable" selected>
+                <mat-icon class="me-1">email</mat-icon> adam4kowalczyk@gmail.com
               </mat-chip>
             </a>
             <a href="http://github.com/startled-cat">
-              <mat-chip color="accent" selected>
-                <mat-icon>email</mat-icon> github.com/startled-cat
+              <mat-chip color="accent" class="chip-clickable" selected>
+                <mat-icon class="me-1">email</mat-icon> github.com/startled-cat
               </mat-chip>
             </a>
           </mat-chip-list>

@@ -38,12 +38,11 @@ export interface Skill {
 })
 export class MainContent {
   displayNavbar: boolean = false;
-  hideExpansionToggles: boolean = true;
+  hideExpansionToggles: boolean = false;
   drawerSettings: DrawerSettings = {
     mode: 'over',
     backdrop: true
   };
-  showFiller = false;
 
   achievements: Achievement[] = [
     {

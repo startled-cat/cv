@@ -24,19 +24,25 @@ export interface DrawerSettings {
   backdrop: boolean;
 }
 
+export interface Skill {
+  name: string;
+  level?: number;
+  icon?: string;
+  img?: string;
+}
+
 @Component({
   selector: 'main-content',
   templateUrl: 'main-content.html',
   styleUrls: ['main-content.css']
 })
 export class MainContent {
-
-  hideExpansionToggles:boolean = false;
+  displayNavbar: boolean = false;
+  hideExpansionToggles: boolean = true;
   drawerSettings: DrawerSettings = {
     mode: 'over',
     backdrop: true
   };
-
   showFiller = false;
 
   achievements: Achievement[] = [
@@ -126,6 +132,88 @@ export class MainContent {
       desc: 'Technik informatyk',
       icon: 'desktop_windows',
       tags: []
+    }
+  ];
+
+  skills: Skill[] = [
+    {
+      name: 'Angielski (C1)',
+      icon: 'translate',
+      level: 0.95
+    },
+
+    {
+      name: 'TypeScript',
+      img:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png',
+      level: 0.7
+    },
+
+    {
+      name: 'Node',
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fnodejs-icon-logo-png-transparent.png&f=1&nofb=1',
+      level: 0.6
+    },
+    {
+      name: 'Angualar',
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fangular-icon-1-logo-png-transparent.png&f=1&nofb=1',
+      level: 0.7
+    },
+
+    {
+      name: 'Angualar Material',
+      img: 'https://material.angular.io/assets/img/angular-material-logo.svg',
+      level: 0.8
+    },
+
+    {
+      name: 'RxJs',
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.auth0.com%2Fblog%2Fauth-observables%2Frxjs-logo.png&f=1&nofb=1',
+      level: 0.5
+    },
+
+    {
+      name: 'Docker',
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.docker.com%2Fsites%2Fdefault%2Ffiles%2Fd8%2Fstyles%2Frole_icon%2Fpublic%2F2019-07%2FMoby-logo.png%3Fitok%3DsYH_JEaJ&f=1&nofb=1',
+      level: 0.4
+    },
+
+    {
+      name: 'Python',
+      img:
+        'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png',
+      level: 0.6
+    },
+
+    {
+      name: 'Flask',
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fflask-training-courses.uk%2Fimages%2Fflask-logo.png&f=1&nofb=1',
+      level: 0.5
+    },
+
+    {
+      name: 'Java',
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F226%2F226777.png&f=1&nofb=1',
+      level: 0.7
+    },
+
+    {
+      name: 'C',
+      img:
+        'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/c/c.png',
+      level: 0.8
+    },
+    {
+      name: 'C#',
+      img:
+        'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/csharp/csharp.png',
+      level: 0.4
     }
   ];
 }

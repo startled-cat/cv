@@ -36,7 +36,7 @@ mat-drawer-content {
 
 .cards-container {
   padding: 1rem;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -70,9 +70,31 @@ a {
 .chip-nonclickable:hover::after {
   opacity: 0 !important;
 }
-.github-icon {
-  background-image: url('https://i.ibb.co/pbr8b64/Git-Hub-Mark-Light-32px.png');
+
+.github-icon-dark,
+.github-icon-light {
   background-size: cover;
   width: 1rem;
   height: 1rem;
 }
+.github-icon-dark {
+  background-image: url('https://i.ibb.co/34z1pSd/Git-Hub-Mark-32px.png');
+}
+.github-icon-light {
+  background-image: url('https://i.ibb.co/pbr8b64/Git-Hub-Mark-Light-32px.png');
+}
+.image-as-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+mat-card {
+  border-bottom: 5px solid #ffd740;
+}
+
+.skill-panel > .mat-expansion-panel-header {
+  padding: 0 1.5rem 0.5rem 1.5rem;
+}
+/* .skill-panel > .mat-expansion-panel-content > .mat-expansion-panel-body {
+  padding: 0 !important;
+} */

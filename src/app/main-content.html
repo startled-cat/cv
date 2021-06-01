@@ -102,8 +102,7 @@
                     <mat-panel-description>
                     </mat-panel-description>
                   </mat-expansion-panel-header>
-                  <b></b>
-                  <div>{{school.desc}}</div>
+                  <div class="experience-desc">{{school.desc}}</div>
                   <div>{{school.more}}</div>
                 </mat-expansion-panel>
 
@@ -138,7 +137,7 @@
                   </mat-expansion-panel-header>
 
 
-                  <div>{{job.desc}}</div>
+                  <div class="experience-desc">{{job.desc}}</div>
 
                   <div mat-line *ngIf="job.more">{{job.more}}</div>
                   <div mat-line *ngFor="let item of job.list">- {{item}}</div>

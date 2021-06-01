@@ -27,15 +27,6 @@ body {
   padding-top: 1.5rem;
 }
 
-/* .square:after {
-  content: '';
-  display: block;
-  padding-bottom: 100%;
-} */
-.example-card {
-  margin-bottom: 2rem;
-}
-
 .tag-list {
   max-width: max-content;
 }
@@ -105,3 +96,7 @@ a {
 /* .skill-panel > .mat-expansion-panel-content > .mat-expansion-panel-body {
   padding: 0 !important;
 } */
+
+.year{
+  
+}

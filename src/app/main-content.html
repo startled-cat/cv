@@ -33,7 +33,7 @@
     <div class="row row-eq-height w-100 m-0">
       <!-- HEADER -->
       <div class="col-12">
-        <mat-card class="example-card mb-3">
+        <mat-card class="mat-elevation-z2 mb-3 ">
 
           <div class="row ">
 
@@ -85,31 +85,30 @@
       <!-- SCHOOL -->
       <div class="col-12 col-xl-6 mb-3">
 
-        <mat-card class="example-card h-100">
+        <mat-card class="example-card mat-elevation-z2 h-100">
           <mat-card-header>
             <mat-card-title>Wykształcenie</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-
-
             <mat-accordion [multi]="accordionMulti">
-              <mat-expansion-panel *ngFor="let school of schools" [hideToggle]="hideExpansionToggles">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
-                    {{school.name}}
-                  </mat-panel-title>
-                  <mat-panel-description>
+              <ng-container *ngFor="let school of schools">
+                <span class="year">({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd:'teraz' }})</span>
+                <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
+                      {{school.name}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <b></b>
+                  <div>{{school.desc}}</div>
+                  <div>{{school.more}}</div>
+                </mat-expansion-panel>
 
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
-                <b>
-            ({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd :
-            'teraz' }}) 
-          </b>
-                <div>{{school.desc}}</div>
-                <div>{{school.more}}</div>
-              </mat-expansion-panel>
+              </ng-container>
+
             </mat-accordion>
 
 
@@ -120,13 +119,18 @@
       <!-- EXPERIENCE -->
       <div class="col-12 col-xl-6 mb-3">
 
-        <mat-card class="example-card h-100 ">
+        <mat-card class="example-card mat-elevation-z2 h-100 ">
           <mat-card-header>
             <mat-card-title>Doświadczenie</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <ng-container *ngFor="let job of jobs">
-              <mat-accordion [multi]="accordionMulti">
+            <mat-accordion [multi]="accordionMulti">
+              <ng-container *ngFor="let job of jobs">
+                <span class="year">
+              ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
+              
+            </span>
+
 
 
                 <mat-expansion-panel [hideToggle]="hideExpansionToggles">
@@ -139,10 +143,7 @@
                     </mat-panel-description>
                   </mat-expansion-panel-header>
 
-                  <b>
-              ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
-              
-            </b>
+
                   <div>{{job.desc}}</div>
 
                   <div mat-line *ngIf="job.more">{{job.more}}</div>
@@ -158,22 +159,23 @@
 
                 </mat-expansion-panel>
 
-              </mat-accordion>
 
-            </ng-container>
+              </ng-container>
+            </mat-accordion>
 
           </mat-card-content>
         </mat-card>
       </div>
       <!-- ACHV -->
       <div class="col-12 col-md-6 mb-3">
-        <mat-card class="example-card mb-0">
+        <mat-card class="example-card mat-elevation-z2 mb-0">
           <mat-card-header>
             <mat-card-title>Osiągnięcia</mat-card-title>
           </mat-card-header>
           <mat-card-content>
             <mat-accordion [multi]="accordionMulti">
               <ng-container *ngFor="let achv of achievements">
+                <span class="year">({{achv.year}})</span>
                 <mat-expansion-panel [hideToggle]="hideExpansionToggles">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
@@ -183,7 +185,7 @@
 
                     </mat-panel-description>
                   </mat-expansion-panel-header>
-                  <b>({{achv.year}})</b>
+
                   {{achv.desc}}
                   <div class="tag-list">
                     <mat-chip-list class="example-chip">
@@ -206,7 +208,7 @@
       </div>
       <!-- SKILLS -->
       <div class="col-12 col-md-6 mb-3">
-        <mat-card class="example-card">
+        <mat-card class="example-card mat-elevation-z2">
           <mat-card-header>
             <mat-card-title>Umiejętnośći</mat-card-title>
           </mat-card-header>

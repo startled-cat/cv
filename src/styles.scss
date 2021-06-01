@@ -1,8 +1,5 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-//@use '~@angular/material' as mat;
-// @include mat.core();
-// $my-palette: mat.$indigo-palette;
 
 body {
   font-family: Roboto, Arial, sans-serif;
@@ -28,7 +25,11 @@ body {
   );
 }
 mat-card {
-  border-bottom: 5px solid #ffd740;
+  //border-bottom: 5px solid #673ab7;
+  //border-top: 5px solid #673ab7;
+}
+.mat-drawer-container {
+  background-color: #fff !important;
 }
 .row-eq-height {
   display: -webkit-box;
@@ -39,6 +40,22 @@ mat-card {
 .ma {
   margin: auto !important;
   width: fit-content;
+}
+
+.mat-card-header {
+  background-color: #673ab7;
+  color: #fff;
+  padding: 16px 16px 0 16px;
+  border-radius: 4px 4px 0 0;
+  //margin-bottom: 16px;
+  //border-bottom: 4px solid #05040038;
+  box-shadow: 0px 3px 4px 0px #00000059;
+}
+.mat-card.example-card {
+  padding: 0 !important;
+}
+.example-card > mat-card-content {
+  padding: 1rem;
 }
 
 /**  Copyright 2021 Google LLC. All Rights Reserved.

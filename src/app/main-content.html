@@ -29,52 +29,61 @@
 
 
 
-    <mat-card class="example-card mb-3">
 
-      <div class="row ">
-        <div class="col-12 col-sm-4 col-md-6 ">
+    <div class="row row-eq-height w-100 m-0">
+      <!-- HEADER -->
+      <div class="col-12">
+        <mat-card class="example-card mb-3">
 
-          <div class="square mat-elevation-z4 ">
-            <div></div>
+          <div class="row ">
+
+            <div class="col-12 col-sm-auto col-md-auto order-2 order-sm-1">
+              <div class="square gradient1 mat-elevation-z4 ">
+                <div class="avatar"></div>
+              </div>
+            </div>
+
+            <div class="col name-container order-1 order-sm-2">
+              <span class="display-6 name">Adam Kowalczyk</span>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 order-3">
+              <div class="info-chips-container">
+
+                <mat-chip-list aria-label="info">
+                  <mat-chip color="primary" class="chip-nonclickable" selected>
+                    <mat-icon class="me-1">event</mat-icon> 1997-01-20
+                  </mat-chip>
+                  <a href="tel:797087120">
+                    <mat-chip color="primary" class="chip-clickable" selected>
+                      <mat-icon class="me-1">phone</mat-icon> 797-087-120
+                    </mat-chip>
+                  </a>
+                  <a href="mailto: adam4kowalczyk@gmail.com">
+                    <mat-chip color="primary" class="chip-clickable" selected>
+                      <mat-icon class="me-1">email</mat-icon> adam4kowalczyk@gmail.com
+                    </mat-chip>
+                  </a>
+                  <a href="http://github.com/startled-cat">
+                    <mat-chip color="primary" class="chip-clickable" selected>
+                      <div class="github-icon-light me-1"></div> github.com/startled-cat
+                    </mat-chip>
+                  </a>
+                </mat-chip-list>
+
+              </div>
+
+            </div>
           </div>
 
 
 
-        </div>
-        <div class="col-12 col-sm-8 col-md-6">
-          <span class="display-6">Adam Kowalczyk</span>
 
-          <mat-chip-list aria-label="info">
-            <mat-chip color="primary" class="chip-nonclickable" selected>
-              <mat-icon class="me-1">event</mat-icon> 1997-01-20
-            </mat-chip>
-            <a href="tel:797087120">
-              <mat-chip color="primary" class="chip-clickable" selected>
-                <mat-icon class="me-1">phone</mat-icon> 797-087-120
-              </mat-chip>
-            </a>
-            <a href="mailto: adam4kowalczyk@gmail.com">
-              <mat-chip color="primary" class="chip-clickable" selected>
-                <mat-icon class="me-1">email</mat-icon> adam4kowalczyk@gmail.com
-              </mat-chip>
-            </a>
-            <a href="http://github.com/startled-cat">
-              <mat-chip color="primary" class="chip-clickable" selected>
-                <div class="github-icon-light me-1"></div> github.com/startled-cat
-              </mat-chip>
-            </a>
-          </mat-chip-list>
+        </mat-card>
 
-        </div>
       </div>
-
-
-
-
-    </mat-card>
-
-    <div class="row row-eq-height w-100">
-      <div class="col-6 mb-3">
+      <!-- SCHOOL -->
+      <div class="col-12 col-xl-6 mb-3">
 
         <mat-card class="example-card h-100">
           <mat-card-header>
@@ -83,31 +92,33 @@
           <mat-card-content>
 
 
+            <mat-accordion [multi]="accordionMulti">
+              <mat-expansion-panel *ngFor="let school of schools" [hideToggle]="hideExpansionToggles">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
+                    {{school.name}}
+                  </mat-panel-title>
+                  <mat-panel-description>
 
-            <mat-expansion-panel *ngFor="let school of schools" [hideToggle]="hideExpansionToggles">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <mat-icon class="me-2">{{ school.icon ? school.icon : 'school' }}</mat-icon>
-                  {{school.name}}
-                </mat-panel-title>
-                <mat-panel-description>
-
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <b>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <b>
             ({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd :
             'teraz' }}) 
           </b>
-              <div>{{school.desc}}</div>
-              <div>{{school.more}}</div>
-            </mat-expansion-panel>
+                <div>{{school.desc}}</div>
+                <div>{{school.more}}</div>
+              </mat-expansion-panel>
+            </mat-accordion>
 
 
 
           </mat-card-content>
         </mat-card>
       </div>
-      <div class="col-6 mb-3">
+      <!-- EXPERIENCE -->
+      <div class="col-12 col-xl-6 mb-3">
 
         <mat-card class="example-card h-100 ">
           <mat-card-header>
@@ -115,126 +126,108 @@
           </mat-card-header>
           <mat-card-content>
             <ng-container *ngFor="let job of jobs">
+              <mat-accordion [multi]="accordionMulti">
 
-              <mat-expansion-panel [hideToggle]="hideExpansionToggles">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <mat-icon class="me-2">work</mat-icon>{{job.name}}
-                  </mat-panel-title>
-                  <mat-panel-description>
 
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
+                <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <mat-icon class="me-2">work</mat-icon>{{job.name}}
+                    </mat-panel-title>
+                    <mat-panel-description>
 
-                <b>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <b>
               ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
               
             </b>
-                <div>{{job.desc}}</div>
+                  <div>{{job.desc}}</div>
 
-                <div mat-line *ngIf="job.more">{{job.more}}</div>
-                <div mat-line *ngFor="let item of job.list">- {{item}}</div>
+                  <div mat-line *ngIf="job.more">{{job.more}}</div>
+                  <div mat-line *ngFor="let item of job.list">- {{item}}</div>
 
-                <div class="tag-list">
-                  <mat-chip-list class="example-chip">
-                    <mat-chip class="example-box" *ngFor="let tag of job.tags">
-                      {{tag}}
-                    </mat-chip>
-                  </mat-chip-list>
-                </div>
+                  <div class="tag-list">
+                    <mat-chip-list class="example-chip">
+                      <mat-chip class="example-box" *ngFor="let tag of job.tags">
+                        {{tag}}
+                      </mat-chip>
+                    </mat-chip-list>
+                  </div>
 
-              </mat-expansion-panel>
+                </mat-expansion-panel>
 
-
+              </mat-accordion>
 
             </ng-container>
 
           </mat-card-content>
         </mat-card>
       </div>
-    </div>
-    <div class="row w-100">
-
-      <div class="col-12 mb-3">
+      <!-- ACHV -->
+      <div class="col-12 col-md-6 mb-3">
         <mat-card class="example-card mb-0">
           <mat-card-header>
             <mat-card-title>Osiągnięcia</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-
-            <ng-container *ngFor="let achv of achievements">
-              <mat-expansion-panel [hideToggle]="hideExpansionToggles">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <mat-icon class="me-2">article</mat-icon>{{achv.name}}
-                  </mat-panel-title>
-                  <mat-panel-description>
-
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
-                <b>({{achv.year}})</b>
-                {{achv.desc}}
-                <div class="tag-list">
-                  <mat-chip-list class="example-chip">
-                    <mat-chip class="example-box" *ngFor="let tag of achv.tags">
-                      {{tag}}
-                    </mat-chip>
-                  </mat-chip-list>
-                </div>
-
-
-
-              </mat-expansion-panel>
-
-
-
-            </ng-container>
-
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="col-12 mb-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>Umiejętnośći</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="row  g-0 w-100">
-
-
-              <div *ngFor="let skill of skills" class="col-3">
-                <mat-expansion-panel expanded [hideToggle]="hideExpansionToggles" class="skill-panel">
-                  <mat-expansion-panel-header class="">
+            <mat-accordion [multi]="accordionMulti">
+              <ng-container *ngFor="let achv of achievements">
+                <mat-expansion-panel [hideToggle]="hideExpansionToggles">
+                  <mat-expansion-panel-header>
                     <mat-panel-title>
-                      <mat-icon *ngIf="skill.icon" class="me-2">{{skill.icon || 'translate'}}</mat-icon>
-                      <div *ngIf="skill.img" class="image-as-icon me-2">
-                        <img src="{{skill.img}}" class="w-100">
-                      </div>
-
-                      {{skill.name}}
-
+                      <mat-icon class="me-2">article</mat-icon>{{achv.name}}
                     </mat-panel-title>
+                    <mat-panel-description>
+
+                    </mat-panel-description>
                   </mat-expansion-panel-header>
-
-                  <mat-progress-bar *ngIf="skill.level" mode="determinate" value="{{skill.level * 100}}">
-
-                  </mat-progress-bar>
-
+                  <b>({{achv.year}})</b>
+                  {{achv.desc}}
+                  <div class="tag-list">
+                    <mat-chip-list class="example-chip">
+                      <mat-chip class="example-box" *ngFor="let tag of achv.tags">
+                        {{tag}}
+                      </mat-chip>
+                    </mat-chip-list>
+                  </div>
 
 
 
                 </mat-expansion-panel>
 
 
+              </ng-container>
+            </mat-accordion>
 
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- SKILLS -->
+      <div class="col-12 col-md-6 mb-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Umiejętnośći</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row g-0 w-100">
+              <div *ngFor="let skill of skills" class="col-12 col-sm-6 ">
+                <mat-expansion-panel expanded [hideToggle]="true" class="skill-panel">
+                  <mat-expansion-panel-header class="">
+                    <mat-panel-title>
+                      <mat-icon *ngIf="skill.icon" class="me-2">{{skill.icon || 'translate'}}</mat-icon>
+                      <div *ngIf="skill.img" class="image-as-icon me-2">
+                        <img src="{{skill.img}}" class="w-100">
+                      </div>
+                      {{skill.name}}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-progress-bar *ngIf="skill.level" mode="determinate" value="{{skill.level * 100}}">
+                  </mat-progress-bar>
+                </mat-expansion-panel>
               </div>
-
-
-
             </div>
-
-
-
           </mat-card-content>
         </mat-card>
       </div>
@@ -247,7 +240,7 @@
 
 
   </div>
-  <a href="https://imgbb.com/"><img src="https://i.ibb.co/RQncvbQ/cv-qr.png" alt="cv-qr" border="0"></a>
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/Pj2cftf/cv-qr.png" alt="cv-qr" border="0"></a>
 </mat-drawer-container>
 <!-- Copyright 2021 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

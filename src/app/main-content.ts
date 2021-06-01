@@ -37,8 +37,9 @@ export interface Skill {
   styleUrls: ['main-content.css']
 })
 export class MainContent {
+  accordionMulti: boolean = true;
   displayNavbar: boolean = false;
-  hideExpansionToggles: boolean = false;
+  hideExpansionToggles: boolean = true;
   drawerSettings: DrawerSettings = {
     mode: 'over',
     backdrop: true

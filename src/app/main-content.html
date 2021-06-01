@@ -92,7 +92,7 @@
           <mat-card-content>
             <mat-accordion [multi]="accordionMulti">
               <ng-container *ngFor="let school of schools">
-                <span class="year">({{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd:'teraz' }})</span>
+                <span class="year">{{ school.yearStart}} - {{ school.yearEnd ? school.yearEnd:'teraz' }}</span>
                 <mat-expansion-panel [hideToggle]="hideExpansionToggles">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
@@ -126,13 +126,7 @@
           <mat-card-content>
             <mat-accordion [multi]="accordionMulti">
               <ng-container *ngFor="let job of jobs">
-                <span class="year">
-              ({{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }})
-              
-            </span>
-
-
-
+                <span class="year">{{ job.yearStart}} - {{ job.yearEnd ? job.yearEnd : 'teraz' }}</span>
                 <mat-expansion-panel [hideToggle]="hideExpansionToggles">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
@@ -175,7 +169,7 @@
           <mat-card-content>
             <mat-accordion [multi]="accordionMulti">
               <ng-container *ngFor="let achv of achievements">
-                <span class="year">({{achv.year}})</span>
+                <span class="year">{{achv.year}}</span>
                 <mat-expansion-panel [hideToggle]="hideExpansionToggles">
                   <mat-expansion-panel-header>
                     <mat-panel-title>

@@ -73,7 +73,7 @@ export class MainContent {
     {
       yearStart: 2019,
       yearEnd: 2020,
-      name: 'Hutchinson Poland Sp. z o.o. Zakład Łódź 1, ul. Kurczaki 130',
+      name: 'Hutchinson Poland Sp. z o.o. Zakład Łódź 1',
       desc: 'Stażysta w dziale pasków transmisyjnych',
       list: [
         'Utrzymywanie, usprawniane i modernizacja istniejącego oprogramowania',
@@ -156,14 +156,14 @@ export class MainContent {
       level: 0.6
     },
     {
-      name: 'Angualar',
+      name: 'Angular',
       img:
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fangular-icon-1-logo-png-transparent.png&f=1&nofb=1',
       level: 0.7
     },
 
     {
-      name: 'Angualar Material',
+      name: 'Angular Material',
       img: 'https://material.angular.io/assets/img/angular-material-logo.svg',
       level: 0.8
     },

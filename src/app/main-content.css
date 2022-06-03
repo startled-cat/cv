@@ -32,6 +32,18 @@ body {
   padding-top: 1.5rem;
 }
 
+@media only screen and (max-width: 576px) {
+  .name {
+    line-height: 3rem;
+  }
+
+  .info-chips-container {
+    padding-top: 1rem;
+  }
+}
+
+
+
 .tag-list {
   max-width: max-content;
 }
@@ -127,4 +139,8 @@ a {
 
 .flex-card-container {
   padding: 4px;
+}
+
+.skill-name {
+  color: #000 !important;
 }

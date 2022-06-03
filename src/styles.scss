@@ -1,53 +1,56 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$primary: #3f51b5;
+$accent: #ff4081;
+
+.mat-primary {
+  background: $primary;
+  color: #fff;
+}
+.mat-accent {
+  background: $accent;
+  color: #fff;
+}
 
 body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
-
-.mat-primary {
-  background-color: #673ab7;
-  color: #fff;
+.border-accent {
+  box-shadow: 0px 0 0px 2px #ff4081 !important;
 }
-.mat-accent {
-  background-color: #ffd740;
-  color: #000;
+.border-primary {
+  box-shadow: 0px 0 0px 2px #3f51b5 !important;
 }
 .gradient1 {
   background-color: #4158d0;
   background-image: linear-gradient(
     43deg,
-    #673ab7 0%,
+    #3f51b5 0%,
     #c850c0 46%,
-    #ffd740 100%
+    #ff4081 100%
   );
-}
-mat-card {
-  //border-bottom: 5px solid #673ab7;
-  //border-top: 5px solid #673ab7;
 }
 .mat-drawer-container {
   background-color: #fff !important;
 }
-.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
+// .row-eq-height {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+// }
 .ma {
   margin: auto !important;
   width: fit-content;
 }
 
 .mat-card-header {
-  background-color: #673ab7;
-  color: #fff;
+  // background-color: #673ab7;
+  // color: #fff;
   padding: 16px 16px 0 16px;
   border-radius: 4px 4px 0 0;
-  //margin-bottom: 16px;
-  //border-bottom: 4px solid #05040038;
   box-shadow: 0px 3px 4px 0px #00000059;
 }
 .mat-card.example-card {
@@ -57,6 +60,6 @@ mat-card {
   padding: 1rem;
 }
 
-/**  Copyright 2021 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
+.tag-list {
+  padding-top: 0.5rem;
+}

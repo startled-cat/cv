@@ -1,14 +1,16 @@
 body {
   padding: 0 !important;
 }
+
 .avatar {
-  background-image: url('https://i.ibb.co/sgR4jHr/me.png');
+  background-image: url("https://i.ibb.co/sgR4jHr/me.png");
   background-size: cover;
   width: 100%;
   height: 100%;
 
   border-radius: 50%;
 }
+
 .square {
   width: 180px;
   height: 180px;
@@ -16,13 +18,16 @@ body {
   margin: auto;
   padding: 6px;
 }
+
 .name-container {
   text-align: center;
 }
+
 .name {
   display: inline-block;
   line-height: 10rem;
 }
+
 .info-chips-container {
   padding-top: 1.5rem;
 }
@@ -37,6 +42,7 @@ mat-drawer-content {
   flex-direction: column;
   align-items: flex-start;
 }
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -52,6 +58,7 @@ mat-drawer-content {
   height: fit-content;
   padding: 1rem;
 }
+
 .mat-expansion-panel {
   margin-bottom: 0.3rem;
 }
@@ -59,9 +66,11 @@ mat-drawer-content {
 .mat-expansion-panel:not(.mat-expanded) {
   box-shadow: none;
 }
+
 .mat-expansion-panel {
   box-shadow: none;
 }
+
 a {
   text-decoration: none;
 }
@@ -69,6 +78,7 @@ a {
 .chip-clickable {
   cursor: pointer;
 }
+
 .chip-nonclickable:hover::after {
   opacity: 0 !important;
 }
@@ -79,29 +89,30 @@ a {
   width: 1rem;
   height: 1rem;
 }
+
 .github-icon-dark {
-  background-image: url('https://i.ibb.co/34z1pSd/Git-Hub-Mark-32px.png');
+  background-image: url("https://i.ibb.co/34z1pSd/Git-Hub-Mark-32px.png");
 }
+
 .github-icon-light {
-  background-image: url('https://i.ibb.co/pbr8b64/Git-Hub-Mark-Light-32px.png');
+  background-image: url("https://i.ibb.co/pbr8b64/Git-Hub-Mark-Light-32px.png");
 }
+
 .image-as-icon {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.skill-panel > .mat-expansion-panel-header {
+.skill-panel>.mat-expansion-panel-header {
   padding: 0 1.5rem 0.5rem 1.5rem;
 }
-/* .skill-panel > .mat-expansion-panel-content > .mat-expansion-panel-body {
-  padding: 0 !important;
-} */
 
 .year {
   font-weight: 600;
-  border-left: 5px solid #ffd740;
+  border-left: 5px solid #ff4081;
   padding-left: 0.5rem;
 }
+
 .experience-desc {
   font-weight: 700;
 }
@@ -109,6 +120,11 @@ a {
 .legal {
   font-size: 0.75em;
 }
-.hidden{
-  display:none;
+
+.hidden {
+  display: none;
+}
+
+.flex-card-container {
+  padding: 4px;
 }

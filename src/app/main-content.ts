@@ -13,7 +13,7 @@ export interface Experience {
 }
 
 export interface Achievement {
-  year: number;
+  year: number | string;
   name: string;
   desc: string;
   tags?: string[];
@@ -26,7 +26,7 @@ export interface DrawerSettings {
 
 export interface Skill {
   name: string;
-  level?: number;
+  level: number;
   icon?: string;
   img?: string;
 }
@@ -45,7 +45,20 @@ export class MainContent {
     backdrop: true
   };
 
+
+
   achievements: Achievement[] = [
+    {
+      year: '2022 - planowany termin obrony',
+      name: 'Praca magisterska',
+      desc: 'System weryfikacji wieloskładnikowej oparty na technologii blockchain',
+      tags: [
+        'Python',
+        'Solidity',
+        'Blockchain',
+        'EVM'
+      ]
+    },
     {
       year: 2020,
       name: 'Praca inżynierska',
@@ -54,11 +67,8 @@ export class MainContent {
         'TypeScript',
         'Python',
         'Angular',
-        'RxJs',
-        'Material',
         'Flask',
         'Heroku',
-        'PostgreSQL'
       ]
     },
     {
@@ -71,15 +81,27 @@ export class MainContent {
 
   jobs: Experience[] = [
     {
+      yearStart: 2021,
+      yearEnd: 2022,
+      name: 'Accenture Services Sp. z o. o.',
+      desc: 'Praktykant DevOps',
+      list: [
+        'Nauka i praca w zespole ATC DevOps',
+        'Wykonywanie testów oraz dokumentowanie wprowadzanych zmian',
+        'Administrowanie systemem Jira'
+      ],
+      tags: [
+        'Jira', 'Jenkins', 'AWS'
+      ]
+    },
+    {
       yearStart: 2019,
       yearEnd: 2020,
       name: 'Hutchinson Poland Sp. z o.o. Zakład Łódź 1',
-      desc: 'Stażysta w dziale pasków transmisyjnych',
+      desc: 'Praktykant w dziale pasków transmisyjnych',
       list: [
         'Utrzymywanie, usprawniane i modernizacja istniejącego oprogramowania',
         'Zbieranie wymagań od użytkowników',
-        'Tworzenie nowego oprogramowania',
-        'Dokumentacja wdrażanych rozwiązań',
         'Automatyzacja i informatyzacja procesów',
         'Szkolenie użytkowników z obsługi storzonego oprogramowania'
       ],
@@ -89,9 +111,6 @@ export class MainContent {
         'Express',
         'TypeScript',
         'Angular',
-        'RxJs',
-        'Ubuntu Server',
-        'MS SQL Server'
       ]
     },
     {
@@ -103,7 +122,7 @@ export class MainContent {
         'Pomoc w obsłudze sklepu internetowego',
         'Modyfikowanie i tworzenie szablonów aukcji allegro'
       ],
-      tags: ['HTML', 'CSS', 'PhotoShop']
+      tags: ['HTML', 'CSS', 'Photoshop']
     }
   ];
 
@@ -139,85 +158,116 @@ export class MainContent {
     {
       name: 'Angielski (C1)',
       icon: 'translate',
-      level: 0.95
+      level: 0.95,
     },
 
     {
       name: 'TypeScript',
       img:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png',
-      level: 0.7
+        'assets/typescript-seeklogo.com.svg',
+      level: 0.7,
     },
 
     {
       name: 'Node',
       img:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fnodejs-icon-logo-png-transparent.png&f=1&nofb=1',
-      level: 0.6
+        'assets/nodejs-seeklogo.com.svg',
+      level: 0.6,
     },
     {
       name: 'Angular',
       img:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fangular-icon-1-logo-png-transparent.png&f=1&nofb=1',
-      level: 0.7
+        'assets/angular-seeklogo.com.svg',
+      level: 0.7,
     },
 
-    {
-      name: 'Angular Material',
-      img: 'https://material.angular.io/assets/img/angular-material-logo.svg',
-      level: 0.8
-    },
+    // {
+    //   name: 'Angular Material',
+    //   img: 'assets/angular-material-logo.svg',
+    //   level: 0.8,
+    // },
 
-    {
-      name: 'RxJs',
-      img:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.auth0.com%2Fblog%2Fauth-observables%2Frxjs-logo.png&f=1&nofb=1',
-      level: 0.5
-    },
+    // {
+    //   name: 'RxJs',
+    //   img:
+    //     'assets/rxjs-seeklogo.com.svg',
+    //   level: 0.6,
+    // },
 
     {
       name: 'Docker',
       img:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.docker.com%2Fsites%2Fdefault%2Ffiles%2Fd8%2Fstyles%2Frole_icon%2Fpublic%2F2019-07%2FMoby-logo.png%3Fitok%3DsYH_JEaJ&f=1&nofb=1',
-      level: 0.4
+        'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDM5XzctZG9ja2VyIj48Zz48Zz48cmVjdCBoZWlnaHQ9IjQzLjE5MyIgc3R5bGU9ImZpbGw6IzA5OUNFQzsiIHdpZHRoPSI0Ny41MDYiIHg9IjIyOS45OTkiIHk9IjE0Ny4yMjUiLz48cmVjdCBoZWlnaHQ9IjQyLjY5IiBzdHlsZT0iZmlsbDojMDk5Q0VDOyIgd2lkdGg9IjQ3LjUwNiIgeD0iMjI5Ljk5OSIgeT0iMTk5LjExNSIvPjxyZWN0IGhlaWdodD0iNDMuMTkzIiBzdHlsZT0iZmlsbDojMDk5Q0VDOyIgd2lkdGg9IjQ3LjUwNiIgeD0iMTczLjg2OSIgeT0iMTQ3LjIyNSIvPjxyZWN0IGhlaWdodD0iNDIuNjkxIiBzdHlsZT0iZmlsbDojMDk5Q0VDOyIgd2lkdGg9IjQ3LjUwNyIgeD0iMjg2LjIiIHk9IjE5OS4wNDMiLz48cmVjdCBoZWlnaHQ9IjQzLjYyNSIgc3R5bGU9ImZpbGw6IzA5OUNFQzsiIHdpZHRoPSI0Ny41MDYiIHg9IjIyOS45OTkiIHk9Ijk0Ljk3NSIvPjxyZWN0IGhlaWdodD0iNDMuMTkzIiBzdHlsZT0iZmlsbDojMDk5Q0VDOyIgd2lkdGg9IjQ3LjUwNSIgeD0iMTE3LjczOCIgeT0iMTQ3LjIyNSIvPjxyZWN0IGhlaWdodD0iNDIuNjkxIiBzdHlsZT0iZmlsbDojMDk5Q0VDOyIgd2lkdGg9IjQ3LjUwNiIgeD0iMTczLjg2OSIgeT0iMTk5LjA0MyIvPjxwYXRoIGQ9Ik00NzYuNDQxLDIxOS4wOTVjLTEwLjM1LTYuOTcyLTM0LjIxLTkuNDg3LTUyLjUzNy02LjAzNiAgICAgYy0yLjM3MS0xNy4yNDktMTIuMDAzLTMyLjI3LTI5LjUzOC00NS43ODJsLTEwLjA2Mi02LjY4NWwtNi42ODUsMTAuMDYyYy0xMy4yMjUsMTkuOTgtMTYuODE3LDUyLjg5Ni0yLjY1OCw3NC42MDIgICAgIGMtNi4yNTIsMy4zNzctMTguNTQ1LDcuOTc4LTM0Ljc4Niw3LjY4OUgyNy43NTdjLTYuMjUyLDM2LjUxMSw0LjE2OSw4My45NDUsMzEuNjI0LDExNi41MDEgICAgIGMyNi42NjMsMzEuNTUxLDY2LjYyMyw0Ny41NzksMTE4Ljg3Miw0Ny41NzljMTEzLjEyNCwwLDE5Ni44NTEtNTIuMTA0LDIzNi4wMjEtMTQ2Ljc2YzE1LjM4MSwwLjI4OCw0OC41ODQsMC4wNzMsNjUuNjE4LTMyLjQ4MyAgICAgYzEuMDc4LTEuNzk3LDQuNzQzLTkuNDg4LDYuMTA3LTEyLjI5MUw0NzYuNDQxLDIxOS4wOTV6IiBzdHlsZT0iZmlsbDojMDk5Q0VDOyIvPjxwb2x5Z29uIHBvaW50cz0iMTA5LjE4NiwxOTkuMDQzIDEwOS4xMTMsMTk5LjA0MyA2MS42OCwxOTkuMDQzIDYxLjY4LDI0MS43MzQgMTA5LjE4NiwyNDEuNzM0ICAgICIgc3R5bGU9ImZpbGw6IzA5OUNFQzsiLz48cmVjdCBoZWlnaHQ9IjQyLjY5MSIgc3R5bGU9ImZpbGw6IzA5OUNFQzsiIHdpZHRoPSI0Ny41MDUiIHg9IjExNy43MzgiIHk9IjE5OS4wNDMiLz48L2c+PC9nPjwvZz48ZyBpZD0iTGF5ZXJfMSIvPjwvc3ZnPg==',
+      level: 0.65,
     },
 
     {
       name: 'Python',
       img:
-        'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png',
-      level: 0.6
+        'assets/python-seeklogo.com.svg',
+      level: 0.75,
     },
 
     {
       name: 'Flask',
       img:
-        'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fflask-training-courses.uk%2Fimages%2Fflask-logo.png&f=1&nofb=1',
-      level: 0.5
+        'assets/flask-seeklogo.com.svg',
+      level: 0.4,
+    },
+    {
+      name: 'Git',
+      img:
+        'assets/git-seeklogo.com.svg',
+      level: 0.5,
+    },
+    //   name: 'Express.js',
+    //   img:
+    //     'assets/javascript-js-seeklogo.com.svg',
+    //   level: 0.6,
+    // },
+    {
+      name: 'JavaScript',
+      img:
+        'assets/javascript-js-seeklogo.com.svg',
+      level: 0.6,
     },
 
     {
       name: 'Java',
       img:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F226%2F226777.png&f=1&nofb=1',
-      level: 0.7
+        'assets/java-seeklogo.com.svg',
+      level: 0.5,
     },
 
     {
       name: 'C',
       img:
-        'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/c/c.png',
-      level: 0.8
+        'assets/c-programming-language-seeklogo.com.svg',
+      level: 0.7,
     },
+    // {
+    //   name: 'C#',
+    //   img:
+    //     'assets/c-sharp-c-seeklogo.com.svg',
+    //   level: 0.3,
+    // },
+    // {
+    //   name: 'Flutter',
+    //   img:
+    //     'assets/flutter-seeklogo.com.svg',
+    //   level: 0.2,
+    // },
     {
-      name: 'C#',
+      name: 'Linux',
       img:
-        'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/csharp/csharp.png',
-      level: 0.4
+        'assets/tux-seeklogo.com.svg',
+      level: 0.5,
     }
-  ];
-}
 
-/**  Copyright 2021 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
+
+  ].sort((a, b) => b.level - a.level);
+
+  legal: string = "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).";
+
+
+}

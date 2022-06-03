@@ -39,7 +39,9 @@ export interface Skill {
 export class MainContent {
   accordionMulti: boolean = true;
   displayNavbar: boolean = false;
-  hideExpansionToggles: boolean = true;
+  hideExpansionToggles: boolean = false;
+  expanded: boolean = false;
+  showPhoneNumber: boolean = false;
   drawerSettings: DrawerSettings = {
     mode: 'over',
     backdrop: true
